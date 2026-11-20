@@ -1,0 +1,8 @@
+from agent.models.base import Base
+from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import TEXT
+
+class DialogueStateRecord(Base):
+    __tablename__ = "dialogue_state"
+    sender_id: Mapped[str] = mapped_column(primary_key=True)
+    state_json: Mapped[str] = mapped_column(TEXT, nullable=False)

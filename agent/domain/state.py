@@ -225,7 +225,7 @@ class DialogueState(BaseModel):
                 bot_messages=[]
             )
 
-    def commit_turn(self):
+    def commit_pending_turn(self):
         """
         提交一个turn
         本轮处理完成（机器人回复也填好了）后

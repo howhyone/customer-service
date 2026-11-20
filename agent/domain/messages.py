@@ -30,6 +30,11 @@ class BotMessage(BaseModel):
     text: str | None = None
     object: FocusedObject | None = None
 
+class ProcessResult(BaseModel):
+    sender_id: str  # 用户ID
+    message_id: str  # 消息ID(内部生成)
+    messages: list[BotMessage]  # 回复消息（机器人回复的所有消息都给前端）
+    
 if __name__ == '__main__':
     fo = FocusedObject(id="1", type="2")
 
